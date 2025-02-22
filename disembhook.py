@@ -1,5 +1,14 @@
 import requests
 import json
+import subprocess
+import sys
+
+# Function to install the package to the correct location
+def install_package(package_name):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package_name])
+
+# Ensure disembhook is installed
+install_package('disembhook')
 
 class PyHook:
     def __init__(self, url):
